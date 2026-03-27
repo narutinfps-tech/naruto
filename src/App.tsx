@@ -52,6 +52,22 @@ export default function App() {
   const [timeLeft, setTimeLeft] = useState({ hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
+    // UTMify link decoration refresh - more robust implementation
+    const refreshUTMify = () => {
+      if (typeof (window as any).utmify !== 'undefined' && (window as any).utmify.update) {
+        (window as any).utmify.update();
+        console.log('UTMify updated successfully');
+      }
+    };
+
+    // Initial attempt
+    refreshUTMify();
+
+    // Multiple attempts to ensure script is loaded and React has finished rendering
+    const timeouts = [500, 1000, 2000, 5000].map(delay => 
+      setTimeout(refreshUTMify, delay)
+    );
+    
     // Simple countdown to end of day
     const timer = setInterval(() => {
       const now = new Date();
@@ -65,7 +81,10 @@ export default function App() {
       
       setTimeLeft({ hours, minutes, seconds });
     }, 1000);
-    return () => clearInterval(timer);
+    return () => {
+      clearInterval(timer);
+      timeouts.forEach(clearTimeout);
+    };
   }, []);
 
   const scrollToPricing = () => {
