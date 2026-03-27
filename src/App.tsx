@@ -727,11 +727,6 @@ export default function App() {
                   </motion.a>
 
                   <div className="mt-8 flex flex-col gap-4 w-full">
-                    <div className="flex items-center justify-center gap-6">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Logo_Pix.png" alt="Pix" className="h-6 sm:h-8 hover:scale-110 transition-all" referrerPolicy="no-referrer" />
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" className="h-6 sm:h-8 hover:scale-110 transition-all" referrerPolicy="no-referrer" />
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" className="h-8 sm:h-10 hover:scale-110 transition-all" referrerPolicy="no-referrer" />
-                    </div>
                     <p className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">Pagamento 100% Seguro via Criptografia</p>
                   </div>
                 </div>
@@ -817,11 +812,6 @@ export default function App() {
             </motion.a>
 
             <div className="mt-12 flex flex-col gap-4 w-full">
-              <div className="flex items-center justify-center gap-8">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Logo_Pix.png" alt="Pix" className="h-8 sm:h-10 hover:scale-110 transition-all" referrerPolicy="no-referrer" />
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" className="h-8 sm:h-10 hover:scale-110 transition-all" referrerPolicy="no-referrer" />
-                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" className="h-10 sm:h-12 hover:scale-110 transition-all" referrerPolicy="no-referrer" />
-              </div>
               <p className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.3em]">Ambiente de Pagamento 100% Seguro</p>
             </div>
           </div>
