@@ -112,11 +112,29 @@ export default function App() {
               >
                 +2.600 Moldes e Kits <span className="text-rose-600">Personalizáveis</span>
               </motion.h1>
+
+              {/* Vimeo Video Section - Vertical Format */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="mb-12 w-full max-w-[500px] overflow-hidden rounded-2xl shadow-2xl"
+              >
+                <div className="aspect-[9/16] w-full bg-black">
+                  <iframe
+                    src="https://player.vimeo.com/video/1177543174?autoplay=1&muted=1&loop=1&autopause=0"
+                    className="h-full w-full"
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    allowFullScreen
+                    title="VSL Video"
+                  ></iframe>
+                </div>
+              </motion.div>
               
               <motion.p 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
                 className="mb-10 max-w-2xl text-lg text-slate-600 sm:text-xl"
               >
                 Para Editar no Canva e Imprimir em Casa. Crie sacolinhas, kits e personalizados profissionais em poucos minutos — mesmo sem saber design.
@@ -143,40 +161,26 @@ export default function App() {
                 </div>
               </motion.div>
 
-              {/* Mockup Placeholder */}
-              <motion.div 
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="mt-16 w-full max-w-5xl rounded-3xl border border-stone-200 bg-white p-4 shadow-2xl"
-              >
-                <div className="aspect-video w-full overflow-hidden rounded-2xl bg-stone-100 relative group">
-                  <img 
-                    src="https://picsum.photos/seed/crafts/1200/675" 
-                    alt="Preview dos moldes" 
-                    className="h-full w-full object-cover opacity-80"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="rounded-full bg-white/90 p-6 shadow-xl backdrop-blur-sm">
-                      <Gift className="h-12 w-12 text-indigo-600" />
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
+              {/* Mockup Placeholder removed */}
             </div>
           </div>
         </section>
         
         {/* Infinite Carousel Section - Personalized Molds */}
         <section className="bg-slate-50 pt-16 pb-8 overflow-hidden">
-          <div className="container mx-auto px-4 mb-10 text-center">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="container mx-auto px-4 mb-10 text-center"
+          >
             <h2 className="font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl uppercase">
               Lembrancinhas Prontas
             </h2>
             <p className="mt-2 text-slate-500 font-medium italic">Inspirações do que você pode criar</p>
             <div className="mt-4 h-1 w-20 bg-rose-600 mx-auto rounded-full"></div>
-          </div>
+          </motion.div>
 
           <div className="flex flex-col gap-8 overflow-x-hidden">
             {/* Row 1 */}
@@ -292,13 +296,19 @@ export default function App() {
 
         {/* Infinite Carousel Section - Canva Editable Molds */}
         <section className="bg-slate-50 pt-8 pb-16 overflow-hidden">
-          <div className="container mx-auto px-4 mb-10 text-center">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="container mx-auto px-4 mb-10 text-center"
+          >
             <h2 className="font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl uppercase">
               Moldes Editáveis no Canva
             </h2>
             <p className="mt-2 text-slate-500 font-medium italic">Personalize tudo em poucos cliques</p>
             <div className="mt-4 h-1 w-20 bg-rose-600 mx-auto rounded-full"></div>
-          </div>
+          </motion.div>
 
           <div className="flex flex-col gap-8 overflow-x-hidden">
             {/* Row 1 */}
@@ -396,9 +406,15 @@ export default function App() {
         {/* Benefits Grid */}
         <section className="bg-white py-24">
           <div className="container mx-auto px-4">
-            <div className="mb-16 text-center">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="mb-16 text-center"
+            >
               <h2 className="font-display text-3xl font-bold sm:text-4xl">Por que escolher nossos moldes?</h2>
-            </div>
+            </motion.div>
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
               {[
                 { icon: Clock, title: "Acesso Imediato", desc: "Receba tudo por e-mail logo após a confirmação da compra." },
@@ -406,13 +422,20 @@ export default function App() {
                 { icon: Printer, title: "Pronto para Imprimir", desc: "Arquivos adaptados para papel A4 comum. Imprima em casa." },
                 { icon: Edit3, title: "100% Editável", desc: "Mude cores, textos, imagens e temas diretamente no Canva." }
               ].map((benefit, i) => (
-                <div key={i} className="flex flex-col items-center text-center rounded-2xl border border-slate-100 bg-slate-50 p-8 transition-all hover:shadow-md">
+                <motion.div 
+                  key={i} 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className="flex flex-col items-center text-center rounded-2xl border border-slate-100 bg-slate-50 p-8 transition-all hover:shadow-md"
+                >
                   <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-rose-100 text-rose-600">
                     <benefit.icon className="h-6 w-6" />
                   </div>
                   <h3 className="mb-2 font-bold text-slate-900">{benefit.title}</h3>
                   <p className="text-sm text-slate-600 leading-relaxed">{benefit.desc}</p>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -422,7 +445,15 @@ export default function App() {
         <section className="py-24 bg-slate-50">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="mb-12 font-display text-3xl font-bold sm:text-4xl">O que você vai receber hoje?</h2>
+              <motion.h2 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="mb-12 font-display text-3xl font-bold sm:text-4xl"
+              >
+                O que você vai receber hoje?
+              </motion.h2>
               <div className="grid sm:grid-cols-2 gap-8 text-left">
                 {[
                   "500 moldes prontos para imprimir",
@@ -431,12 +462,19 @@ export default function App() {
                   "900 topos de bolo profissionais",
                   "Bônus: Cartão SUS personalizado"
                 ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-100 shadow-sm">
+                  <motion.div 
+                    key={i} 
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: i * 0.1 }}
+                    className="flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-100 shadow-sm"
+                  >
                     <div className="mt-1 rounded-full bg-rose-100 p-1 flex-shrink-0">
                       <CheckCircle2 className="h-5 w-5 text-rose-600" />
                     </div>
                     <p className="text-lg font-bold text-slate-700">{item}</p>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
@@ -446,21 +484,34 @@ export default function App() {
         {/* Objection Handling */}
         <section className="bg-slate-900 py-24 text-white">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-16"
+            >
               <h2 className="font-display text-3xl font-bold sm:text-4xl mb-4">Você NÃO precisa:</h2>
               <p className="text-slate-400">Esqueça as dificuldades do passado.</p>
-            </div>
+            </motion.div>
             <div className="grid gap-8 sm:grid-cols-3">
               {[
                 { title: "Saber design", desc: "Os moldes já vêm com a estrutura profissional pronta." },
                 { title: "Programas caros", desc: "Nada de Photoshop ou Corel. Use apenas o Canva gratuito." },
                 { title: "Gastar com gráficas", desc: "Economize centenas de reais imprimindo você mesma." }
               ].map((item, i) => (
-                <div key={i} className="flex flex-col items-center text-center p-6 rounded-2xl bg-white/5 border border-white/10">
+                <motion.div 
+                  key={i} 
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className="flex flex-col items-center text-center p-6 rounded-2xl bg-white/5 border border-white/10"
+                >
                   <XCircle className="h-10 w-10 text-red-400 mb-4" />
                   <h3 className="text-xl font-bold mb-2">{item.title}</h3>
                   <p className="text-slate-400 text-sm">{item.desc}</p>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -469,10 +520,16 @@ export default function App() {
         {/* How it works */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-12"
+            >
               <h2 className="font-display text-3xl font-bold sm:text-4xl text-slate-900">Como funciona?</h2>
               <p className="mt-2 text-slate-500 font-medium">Simples como 1, 2, 3...</p>
-            </div>
+            </motion.div>
             
             <div className="max-w-5xl mx-auto">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
@@ -482,7 +539,14 @@ export default function App() {
                   { step: "03", title: "Imprima", desc: "Use sua impressora em papel A4.", icon: Printer },
                   { step: "04", title: "Monte", desc: "Recorte, cole e pronto!", icon: Gift }
                 ].map((item, i) => (
-                  <div key={i} className="group relative flex flex-col items-center p-6 rounded-2xl bg-slate-50 border border-slate-100 transition-all hover:bg-white hover:shadow-xl hover:-translate-y-1">
+                  <motion.div 
+                    key={i} 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: i * 0.1 }}
+                    className="group relative flex flex-col items-center p-6 rounded-2xl bg-slate-50 border border-slate-100 transition-all hover:bg-white hover:shadow-xl hover:-translate-y-1"
+                  >
                     <div className="absolute -top-3 -left-3 flex h-8 w-8 items-center justify-center rounded-lg bg-rose-600 text-xs font-bold text-white shadow-lg">
                       {item.step}
                     </div>
@@ -497,7 +561,7 @@ export default function App() {
                         <ArrowRight className="h-5 w-5 text-slate-300" />
                       </div>
                     )}
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
@@ -508,7 +572,15 @@ export default function App() {
         <section className="py-24 bg-rose-600 text-white">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <h2 className="font-display text-3xl font-bold sm:text-4xl mb-10 text-center">Para quem é este material?</h2>
+              <motion.h2 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="font-display text-3xl font-bold sm:text-4xl mb-10 text-center"
+              >
+                Para quem é este material?
+              </motion.h2>
               <div className="grid gap-6 sm:grid-cols-2">
                 {[
                   { icon: Users, text: "Quem quer economizar em festas" },
@@ -516,12 +588,19 @@ export default function App() {
                   { icon: DollarSign, text: "Quem quer começar a vender lembrancinhas" },
                   { icon: Printer, text: "Gráficas e papelarias que buscam agilidade" }
                 ].map((item, i) => (
-                  <div key={i} className="flex flex-col items-center text-center gap-4 p-8 rounded-3xl bg-white/10 backdrop-blur-sm border border-white/10 transition-all hover:bg-white/20 hover:scale-[1.02]">
+                  <motion.div 
+                    key={i} 
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: i * 0.1 }}
+                    className="flex flex-col items-center text-center gap-4 p-8 rounded-3xl bg-white/10 backdrop-blur-sm border border-white/10 transition-all hover:bg-white/20 hover:scale-[1.02]"
+                  >
                     <div className="rounded-2xl bg-white/10 p-4">
                       <item.icon className="h-10 w-10 text-rose-200" />
                     </div>
                     <span className="font-bold text-2xl">{item.text}</span>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
@@ -531,7 +610,13 @@ export default function App() {
         {/* Bonuses */}
         <section className="py-24 bg-white">
           <div className="container mx-auto px-4">
-            <div className="rounded-3xl bg-slate-900 p-8 md:p-16 text-white overflow-hidden relative">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="rounded-3xl bg-slate-900 p-8 md:p-16 text-white overflow-hidden relative"
+            >
               <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-64 h-64 bg-rose-500/20 rounded-full blur-3xl"></div>
               <div className="relative z-10 flex flex-col items-center text-center">
                 <div className="mb-8 inline-flex items-center gap-2 rounded-full bg-rose-500/20 px-4 py-1 text-sm font-bold text-rose-400 ring-1 bg-rose-500/30">
@@ -568,7 +653,14 @@ export default function App() {
                       ]
                     }
                   ].map((bonus, i) => (
-                    <div key={i} className="flex flex-col items-center text-center p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors overflow-hidden">
+                    <motion.div 
+                      key={i} 
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: 0.2 + (i * 0.1) }}
+                      className="flex flex-col items-center text-center p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors overflow-hidden"
+                    >
                       <div className="mb-4 text-rose-400 font-black text-2xl">🎁</div>
                       <h3 className="text-xl font-bold mb-2">{bonus.title}</h3>
                       <p className="text-slate-400 text-sm mb-4">{bonus.desc}</p>
@@ -594,11 +686,11 @@ export default function App() {
                           <div className="absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-slate-900 to-transparent z-10"></div>
                         </div>
                       )}
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </section>
 
@@ -606,7 +698,13 @@ export default function App() {
         <section className="py-24 bg-slate-50">
           <div className="container mx-auto px-4">
             <div className="grid gap-12 lg:grid-cols-2">
-              <div className="p-8 rounded-3xl bg-white border border-slate-200">
+              <motion.div 
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="p-8 rounded-3xl bg-white border border-slate-200"
+              >
                 <h3 className="text-2xl font-bold mb-6 text-rose-600 flex items-center gap-2">
                   <XCircle className="h-6 w-6" />
                   Se você tentar fazer do zero:
@@ -625,8 +723,14 @@ export default function App() {
                     Pode não ficar com aparência profissional e frustrar seus clientes
                   </li>
                 </ul>
-              </div>
-              <div className="p-8 rounded-3xl bg-rose-600 text-white shadow-xl shadow-rose-200">
+              </motion.div>
+              <motion.div 
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="p-8 rounded-3xl bg-rose-600 text-white shadow-xl shadow-rose-200"
+              >
                 <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
                   <CheckCircle2 className="h-6 w-6" />
                   Com nossos moldes prontos:
@@ -645,7 +749,7 @@ export default function App() {
                     Resultado profissional garantido que encanta qualquer pessoa
                   </li>
                 </ul>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -653,7 +757,13 @@ export default function App() {
         {/* Pricing */}
         <section id="pricing" className="py-24 bg-slate-50 relative overflow-hidden">
           <div className="container mx-auto px-4">
-            <div className="max-w-5xl mx-auto">
+            <motion.div 
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="max-w-5xl mx-auto"
+            >
               <div className="grid lg:grid-cols-2 gap-0 rounded-[3rem] overflow-hidden shadow-[0_30px_60px_rgba(225,29,72,0.15)] bg-white border border-slate-100">
                 {/* Left Side: Value Stack */}
                 <div className="p-8 md:p-12 lg:p-16 bg-slate-900 text-white relative overflow-hidden">
@@ -740,23 +850,42 @@ export default function App() {
                   { icon: Clock, text: "Acesso Vitalício" },
                   { icon: Users, text: "+10.000 Alunos" }
                 ].map((badge, i) => (
-                  <div key={i} className="flex items-center justify-center gap-2 py-3 px-4 rounded-2xl bg-white border border-slate-100 shadow-sm">
+                  <motion.div 
+                    key={i} 
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: 0.5 + (i * 0.1) }}
+                    className="flex items-center justify-center gap-2 py-3 px-4 rounded-2xl bg-white border border-slate-100 shadow-sm"
+                  >
                     <badge.icon className="h-4 w-4 text-rose-500" />
                     <span className="text-[10px] font-black text-slate-500 uppercase tracking-wider">{badge.text}</span>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           </div>
         </section>
 
         {/* FAQ */}
         <section className="py-24 bg-slate-50">
           <div className="container mx-auto px-4 max-w-3xl">
-            <div className="text-center mb-16">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-16"
+            >
               <h2 className="font-display text-3xl font-bold sm:text-4xl text-slate-900">Dúvidas Frequentes</h2>
-            </div>
-            <div className="space-y-2">
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="space-y-2"
+            >
               <FAQItem 
                 question="Preciso saber mexer no Canva?" 
                 answer="Não! Os moldes são extremamente simples e intuitivos. Você só precisa clicar e arrastar para mudar cores e textos. Além disso, enviamos um guia rápido para te ajudar." 
@@ -781,35 +910,62 @@ export default function App() {
                 question="E se eu não gostar?" 
                 answer="Nós confiamos tanto no nosso material que oferecemos 7 dias de garantia incondicional. Se não gostar, devolvemos seu dinheiro." 
               />
-            </div>
+            </motion.div>
           </div>
         </section>
 
         {/* Final Decision */}
         <section className="py-24 bg-slate-900 text-white text-center">
           <div className="container mx-auto px-4 max-w-3xl">
-            <h2 className="font-display text-3xl font-bold sm:text-5xl mb-8">A decisão final é sua...</h2>
+            <motion.h2 
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="font-display text-3xl font-bold sm:text-5xl mb-8"
+            >
+              A decisão final é sua...
+            </motion.h2>
             <div className="grid gap-8 md:grid-cols-2 mb-12">
-              <div className="p-8 rounded-3xl bg-white/5 border border-white/10 opacity-50">
+              <motion.div 
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="p-8 rounded-3xl bg-white/5 border border-white/10 opacity-50"
+              >
                 <XCircle className="h-12 w-12 text-rose-400 mx-auto mb-4" />
                 <p className="font-bold mb-2">Continuar gastando</p>
                 <p className="text-slate-400 text-sm">Com personalizados caros e dependendo de outras pessoas.</p>
-              </div>
-              <div className="p-8 rounded-3xl bg-rose-600/20 border border-rose-500/30 ring-2 ring-rose-500">
+              </motion.div>
+              <motion.div 
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="p-8 rounded-3xl bg-rose-600/20 border border-rose-500/30 ring-2 ring-rose-500"
+              >
                 <CheckCircle2 className="h-12 w-12 text-rose-400 mx-auto mb-4" />
                 <p className="font-bold mb-2">Criar seus próprios</p>
                 <p className="text-rose-100 text-sm">Economizar muito e até ganhar dinheiro vendendo para outros.</p>
-              </div>
+              </motion.div>
             </div>
-            <motion.a 
-              href={CHECKOUT_URL}
-              animate={{ y: [0, -8, 0] }}
-              transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-              className="group relative inline-flex items-center gap-2 rounded-2xl bg-rose-600 px-10 py-6 text-2xl font-black text-white shadow-xl shadow-rose-500/20 transition-all hover:bg-rose-700 hover:-translate-y-1 active:scale-95"
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
             >
-              QUERO MEU ACESSO AGORA
-              <ArrowRight className="h-6 w-6 transition-transform group-hover:translate-x-1" />
-            </motion.a>
+              <motion.a 
+                href={CHECKOUT_URL}
+                animate={{ y: [0, -8, 0] }}
+                transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+                className="group relative inline-flex items-center gap-2 rounded-2xl bg-rose-600 px-10 py-6 text-2xl font-black text-white shadow-xl shadow-rose-500/20 transition-all hover:bg-rose-700 hover:-translate-y-1 active:scale-95"
+              >
+                QUERO MEU ACESSO AGORA
+                <ArrowRight className="h-6 w-6 transition-transform group-hover:translate-x-1" />
+              </motion.a>
+            </motion.div>
 
             <div className="mt-12 flex flex-col gap-4 w-full">
               <p className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.3em]">Ambiente de Pagamento 100% Seguro</p>
