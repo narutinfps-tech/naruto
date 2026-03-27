@@ -110,7 +110,7 @@ export default function App() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="mb-6 font-display text-4xl font-extrabold leading-[1.1] text-slate-900 sm:text-6xl lg:text-7xl max-w-4xl"
               >
-                +2.600 Moldes e Kits <span className="text-rose-600">Personalizáveis</span>
+                +500 Moldes de Lembrancinhas <span className="text-rose-600">Personalizáveis</span> para Editar no Canva e Imprimir em Casa
               </motion.h1>
 
               {/* Vimeo Video Section - Vertical Format */}
@@ -137,7 +137,7 @@ export default function App() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="mb-10 max-w-2xl text-lg text-slate-600 sm:text-xl"
               >
-                Para Editar no Canva e Imprimir em Casa. Crie sacolinhas, kits e personalizados profissionais em poucos minutos — mesmo sem saber design.
+                Crie sacolinhas, kits e personalizados profissionais em poucos minutos — mesmo sem saber design.
               </motion.p>
               
               <motion.div 
@@ -568,42 +568,72 @@ export default function App() {
           </div>
         </section>
 
-        {/* For Whom */}
-        <section className="py-24 bg-rose-600 text-white">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <motion.h2 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="font-display text-3xl font-bold sm:text-4xl mb-10 text-center"
-              >
-                Para quem é este material?
-              </motion.h2>
-              <div className="grid gap-6 sm:grid-cols-2">
-                {[
-                  { icon: Users, text: "Quem quer economizar em festas" },
-                  { icon: Gift, text: "Quem deseja fazer personalizados em casa" },
-                  { icon: DollarSign, text: "Quem quer começar a vender lembrancinhas" },
-                  { icon: Printer, text: "Gráficas e papelarias que buscam agilidade" }
-                ].map((item, i) => (
-                  <motion.div 
-                    key={i} 
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: i * 0.1 }}
-                    className="flex flex-col items-center text-center gap-4 p-8 rounded-3xl bg-white/10 backdrop-blur-sm border border-white/10 transition-all hover:bg-white/20 hover:scale-[1.02]"
-                  >
-                    <div className="rounded-2xl bg-white/10 p-4">
-                      <item.icon className="h-10 w-10 text-rose-200" />
-                    </div>
-                    <span className="font-bold text-2xl">{item.text}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
+        {/* Testimonials Section - Infinite Marquee */}
+        <section className="py-24 bg-slate-50 overflow-hidden">
+          <div className="container mx-auto px-4 mb-12">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center"
+            >
+              <h2 className="font-display text-3xl font-bold sm:text-4xl text-slate-900 mb-4">O que nossas clientes estão dizendo</h2>
+              <p className="text-slate-600 max-w-2xl mx-auto">Veja os resultados reais de quem já está transformando festas com nossos moldes.</p>
+            </motion.div>
+          </div>
+
+          <div className="relative flex overflow-hidden py-10">
+            <motion.div 
+              className="flex gap-6 whitespace-nowrap"
+              animate={{
+                x: ["0%", "-50%"],
+              }}
+              transition={{
+                duration: 30,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            >
+              {/* First set of images */}
+              {[
+                "https://i.ibb.co/0jDyVvbf/Whats-App-Image-2026-03-26-at-23-44-08.jpg",
+                "https://i.ibb.co/BVcgCyz0/Whats-App-Image-2026-03-26-at-23-44-09.jpg",
+                "https://i.ibb.co/q3zBPHcS/Whats-App-Image-2026-03-26-at-23-44-09-1.jpg",
+                "https://i.ibb.co/CsY9Cxt3/Whats-App-Image-2026-03-26-at-23-44-09-2.jpg"
+              ].map((src, i) => (
+                <div
+                  key={`first-${i}`}
+                  className="w-[280px] flex-shrink-0 overflow-hidden rounded-2xl shadow-lg border-4 border-white"
+                >
+                  <img 
+                    src={src} 
+                    alt={`Depoimento ${i + 1}`} 
+                    className="w-full h-auto object-cover"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+              ))}
+              {/* Second set of images for seamless loop */}
+              {[
+                "https://i.ibb.co/0jDyVvbf/Whats-App-Image-2026-03-26-at-23-44-08.jpg",
+                "https://i.ibb.co/BVcgCyz0/Whats-App-Image-2026-03-26-at-23-44-09.jpg",
+                "https://i.ibb.co/q3zBPHcS/Whats-App-Image-2026-03-26-at-23-44-09-1.jpg",
+                "https://i.ibb.co/CsY9Cxt3/Whats-App-Image-2026-03-26-at-23-44-09-2.jpg"
+              ].map((src, i) => (
+                <div
+                  key={`second-${i}`}
+                  className="w-[280px] flex-shrink-0 overflow-hidden rounded-2xl shadow-lg border-4 border-white"
+                >
+                  <img 
+                    src={src} 
+                    alt={`Depoimento ${i + 1} loop`} 
+                    className="w-full h-auto object-cover"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+              ))}
+            </motion.div>
           </div>
         </section>
 
