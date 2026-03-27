@@ -568,75 +568,6 @@ export default function App() {
           </div>
         </section>
 
-        {/* Testimonials Section - Infinite Marquee */}
-        <section className="py-24 bg-slate-50 overflow-hidden">
-          <div className="container mx-auto px-4 mb-12">
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center"
-            >
-              <h2 className="font-display text-3xl font-bold sm:text-4xl text-slate-900 mb-4">O que nossas clientes estão dizendo</h2>
-              <p className="text-slate-600 max-w-2xl mx-auto">Veja os resultados reais de quem já está transformando festas com nossos moldes.</p>
-            </motion.div>
-          </div>
-
-          <div className="relative flex overflow-hidden py-10">
-            <motion.div 
-              className="flex gap-6 whitespace-nowrap"
-              animate={{
-                x: ["0%", "-50%"],
-              }}
-              transition={{
-                duration: 30,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-            >
-              {/* First set of images */}
-              {[
-                "https://i.ibb.co/0jDyVvbf/Whats-App-Image-2026-03-26-at-23-44-08.jpg",
-                "https://i.ibb.co/BVcgCyz0/Whats-App-Image-2026-03-26-at-23-44-09.jpg",
-                "https://i.ibb.co/q3zBPHcS/Whats-App-Image-2026-03-26-at-23-44-09-1.jpg",
-                "https://i.ibb.co/CsY9Cxt3/Whats-App-Image-2026-03-26-at-23-44-09-2.jpg"
-              ].map((src, i) => (
-                <div
-                  key={`first-${i}`}
-                  className="w-[280px] flex-shrink-0 overflow-hidden rounded-2xl shadow-lg border-4 border-white"
-                >
-                  <img 
-                    src={src} 
-                    alt={`Depoimento ${i + 1}`} 
-                    className="w-full h-auto object-cover"
-                    referrerPolicy="no-referrer"
-                  />
-                </div>
-              ))}
-              {/* Second set of images for seamless loop */}
-              {[
-                "https://i.ibb.co/0jDyVvbf/Whats-App-Image-2026-03-26-at-23-44-08.jpg",
-                "https://i.ibb.co/BVcgCyz0/Whats-App-Image-2026-03-26-at-23-44-09.jpg",
-                "https://i.ibb.co/q3zBPHcS/Whats-App-Image-2026-03-26-at-23-44-09-1.jpg",
-                "https://i.ibb.co/CsY9Cxt3/Whats-App-Image-2026-03-26-at-23-44-09-2.jpg"
-              ].map((src, i) => (
-                <div
-                  key={`second-${i}`}
-                  className="w-[280px] flex-shrink-0 overflow-hidden rounded-2xl shadow-lg border-4 border-white"
-                >
-                  <img 
-                    src={src} 
-                    alt={`Depoimento ${i + 1} loop`} 
-                    className="w-full h-auto object-cover"
-                    referrerPolicy="no-referrer"
-                  />
-                </div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
-
         {/* Bonuses */}
         <section className="py-24 bg-white">
           <div className="container mx-auto px-4">
@@ -944,6 +875,75 @@ export default function App() {
           </div>
         </section>
 
+        {/* Testimonials Section - Infinite Marquee */}
+        <section className="py-24 bg-slate-50 overflow-hidden">
+          <div className="container mx-auto px-4 mb-12">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center"
+            >
+              <h2 className="font-display text-3xl font-bold sm:text-4xl text-slate-900 mb-4">O que nossas clientes estão dizendo</h2>
+              <p className="text-slate-600 max-w-2xl mx-auto">Veja os resultados reais de quem já está transformando festas com nossos moldes.</p>
+            </motion.div>
+          </div>
+
+          <div className="relative flex overflow-hidden py-10">
+            <motion.div 
+              className="flex gap-6 whitespace-nowrap"
+              animate={{
+                x: ["0%", "-50%"],
+              }}
+              transition={{
+                duration: 30,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            >
+              {/* First set of images */}
+              {[
+                "https://i.ibb.co/0jDyVvbf/Whats-App-Image-2026-03-26-at-23-44-08.jpg",
+                "https://i.ibb.co/BVcgCyz0/Whats-App-Image-2026-03-26-at-23-44-09.jpg",
+                "https://i.ibb.co/q3zBPHcS/Whats-App-Image-2026-03-26-at-23-44-09-1.jpg",
+                "https://i.ibb.co/CsY9Cxt3/Whats-App-Image-2026-03-26-at-23-44-09-2.jpg"
+              ].map((src, i) => (
+                <div
+                  key={`first-${i}`}
+                  className="w-[280px] flex-shrink-0 overflow-hidden rounded-2xl shadow-lg border-4 border-white"
+                >
+                  <img 
+                    src={src} 
+                    alt={`Depoimento ${i + 1}`} 
+                    className="w-full h-auto object-cover"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+              ))}
+              {/* Second set of images for seamless loop */}
+              {[
+                "https://i.ibb.co/0jDyVvbf/Whats-App-Image-2026-03-26-at-23-44-08.jpg",
+                "https://i.ibb.co/BVcgCyz0/Whats-App-Image-2026-03-26-at-23-44-09.jpg",
+                "https://i.ibb.co/q3zBPHcS/Whats-App-Image-2026-03-26-at-23-44-09-1.jpg",
+                "https://i.ibb.co/CsY9Cxt3/Whats-App-Image-2026-03-26-at-23-44-09-2.jpg"
+              ].map((src, i) => (
+                <div
+                  key={`second-${i}`}
+                  className="w-[280px] flex-shrink-0 overflow-hidden rounded-2xl shadow-lg border-4 border-white"
+                >
+                  <img 
+                    src={src} 
+                    alt={`Depoimento ${i + 1} loop`} 
+                    className="w-full h-auto object-cover"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
         {/* Final Decision */}
         <section className="py-24 bg-slate-900 text-white text-center">
           <div className="container mx-auto px-4 max-w-3xl">
@@ -954,7 +954,7 @@ export default function App() {
               transition={{ duration: 0.6 }}
               className="font-display text-3xl font-bold sm:text-5xl mb-8"
             >
-              A decisão final é sua...
+              A ESCOLHA FINAL É SUA
             </motion.h2>
             <div className="grid gap-8 md:grid-cols-2 mb-12">
               <motion.div 
